@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reparto de Maíz | Inicio de Sesión</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css\estilos.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="title"><span>Inicio de Sesión</span></div>
+    <form action="/validar" method="post">
+      <% if (error) { %>
+        <div class="row">
+          <p style="color: rgb(255, 119, 0); text-align: center; margin-bottom: 5px;">Usuario o Contraseña incorrectos</p>
+        </div>
+      <% } %>
+      <div class="row">
+        <i class="fas fa-user"></i>
+        <input type="text" name="usuario" placeholder="Usuario" required />
+      </div>
+      <div class="row">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="contrasena" placeholder="Contraseña" required />
+      </div>
+      <div class="pass"><a href="#">¿Olvido su contraseña?</a></div>
+      <div class="row button">
+        <input type="submit" value="Entrar" href="LobbyI.ejs"/>
+      </div>
+      <div class="signup-link">¿No tienes una cuenta? <a href="/registro">Crear cuenta</a></div>
+    </form>
+  </div>
+</body>
+</html>

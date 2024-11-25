@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Harina de Maíz</title>
+    <link rel="stylesheet" href="css/estilosesion.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación superior -->
+    <header>
+        <nav>
+            <div id="logo">
+                <h1>Inicio | Productos</h1>
+                </div>
+            <div id="nav-buttons">
+                <button onclick="accederPagina('perfil.html')">
+                    <img src="../imagenes/Perfil.png" alt="Perfil" style="width:30px; height:30px;">
+                </button>
+                <button onclick="accederPagina('carrito.html')">
+                    <img src="../imagenes/Carrito.png" alt="Carrito" style="width:30px; height:30px;">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección del catálogo de productos -->
+    <main>
+        <section class="catalogo">
+            <h2>Catálogo de Productos Disponibles</h2>
+            <div class="productos">
+                <div class="producto">
+                    <img src="imagenes/MasecaC.jpg" class="img1">
+                    <h3>Harina de Maíz para Tortillas</h3>
+                    <p>Ofrecemos una variedad para preparar su masa</p>
+                    <button onclick="accederPagina('detalle-producto.html')">Ver Más</button>
+                </div>
+                <div class="productoM">
+                    <img src="imagenes/MasaP.jpg" class="img2">
+                    <h3>Masa para Tortillas</h3>
+                    <br>
+                    <p>Ofrecemos Masa de Calidad</p>
+                    <br>
+                    <button onclick="accederPagina('detalle-producto.html')">Ver Más</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
