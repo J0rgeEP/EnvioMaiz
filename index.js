@@ -1,3 +1,4 @@
+require('dotenv').config(); // Solo necesario para desarrollo local
 const express = require("express"); 
 const mysql = require("mysql2");
 const app = express();
@@ -12,10 +13,11 @@ app.use(
     })
 );
 let conexion = mysql.createConnection({
-    host: "localhost",
-    database: "Molino",
-    user: "root",
-    password: "root"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT || 3306 // Usa el puerto configurado o el predeterminado
 });
 
 app.set("view engine", "ejs");
