@@ -12,7 +12,7 @@ def create_db_connection():
         host="localhost",   # Cambia esto si tu base de datos está en un servidor diferente
         user="root",  # Reemplaza con tu usuario de MySQL
         password="root",  # Reemplaza con tu contraseña de MySQL
-        database="Molino"
+        database="Molino",  #Base de datos correspondiente.
     )
 
 
@@ -20,7 +20,7 @@ def create_db_connection():
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Corrida de Maíz")
+        self.setWindowTitle("Corrida de Maíz MOLINO")
         self.setGeometry(600, 100, 600, 500)
        # Estilo para imagen de fondo de la ventana principal
         self.setStyleSheet("""
@@ -34,8 +34,8 @@ class MainWindow(QMainWindow):
 
 
         # Título
-        self.label = QLabel("Corrida de Maíz", self)
-        self.label.setGeometry(200, 50, 200, 30)
+        self.label = QLabel("Corrida de Maíz MOLINO", self)
+        self.label.setGeometry(120, 50, 350, 30)
         font = QFont("Arial", 20)  # Cambia "Arial" por el nombre de la fuente deseada y 16 por el tamaño
         self.label.setFont(font)
         self.label.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
@@ -61,7 +61,7 @@ class MainWindow(QMainWindow):
 class SecondWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("MENU")
+        self.setWindowTitle("MENU MOLINO")
         self.setGeometry(600, 100, 600, 500)
 
         # Botón para regresar a la ventana principal
@@ -146,7 +146,7 @@ class OptionWindow(QMainWindow):
         self.table.setHorizontalHeaderLabels(column_names)
         self.layout.addWidget(self.table)
 
-        # Botón para cargar datos de MySQL (solo en Interfaz 1)
+        # Botón para cargar datos de MySQL 
         if title == "I1 TORTILLERIAS REGISTRADAS":
             self.loadDataButton = QPushButton("Cargar datos de 'Tortilleria'", self)
             self.loadDataButton.clicked.connect(self.loadDataFromDatabase)
@@ -182,7 +182,7 @@ class OptionWindow(QMainWindow):
         self.backButton.clicked.connect(self.goBackToOptions)
         self.layout.addWidget(self.backButton)
 
-    # Función para cargar datos de la tabla 'Tortilleria' y mostrarlos en la tabla de la interfaz
+    # Función para cargar datos de la tabla 'Tortilleria' y mostrarlos en la tabla de la interfaz 1
     def loadDataFromDatabase(self):
         connection = create_db_connection()
         cursor = connection.cursor()
@@ -198,7 +198,8 @@ class OptionWindow(QMainWindow):
         cursor.close()
         connection.close()
         print("Datos cargados desde la tabla 'Tortilleria'")
-    
+#------------------------------------------------------------------------------------------------    
+    # Función para cargar datos de la tabla 'Almacen' en Interfaz 2
     def loadDataFromAlmacen(self):
         connection = create_db_connection()
         cursor = connection.cursor()
@@ -215,7 +216,7 @@ class OptionWindow(QMainWindow):
         connection.close()
         print("Datos cargados desde la tabla 'Almacen'")
 
-
+#-------------------------------------------------------------------------------------------
     # Función para cargar datos de la tabla 'Orden_Proveedor' en Interfaz 3
     def loadDataFromOrdenProveedor(self):
         connection = create_db_connection()
@@ -232,7 +233,7 @@ class OptionWindow(QMainWindow):
         cursor.close()
         connection.close()
         print("Datos cargados desde la tabla 'Orden_Proveedor'")    
-
+#-------------------------------------------------------------------------------------------------
     # Función para cargar datos de la tabla 'Pedido' en Interfaz 4
     def loadDataFromPedido(self):
         connection = create_db_connection()
@@ -250,7 +251,7 @@ class OptionWindow(QMainWindow):
         connection.close()
         print("Datos cargados desde la tabla 'Pedido'")
 
-
+#---------------------------------------------------------------------------------------------------
     # Función para agregar una fila a la tabla
     def addRow(self):
         row_position = self.table.rowCount()
@@ -290,4 +291,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-   
