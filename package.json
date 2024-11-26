@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +15,12 @@
     "mysql2": "^3.11.4",
     "mysqlm": "^2.0.6"
   },
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "14.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi-usuario/mi-repositorio.git"
+  }
 }

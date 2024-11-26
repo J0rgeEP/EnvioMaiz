@@ -1,4 +1,8 @@
-require('dotenv').config(); // Solo necesario para desarrollo local
+require('dotenv').config({ path: './datos.env' });
+const dbHost = process.env.DB_HOST;
+const dbUser = process.env.DB_USER;
+const dbPass = process.env.DB_PASS;
+const dbName = process.env.DB_NAME;
 const express = require("express"); 
 const mysql = require("mysql2");
 const app = express();
@@ -13,11 +17,10 @@ app.use(
     })
 );
 let conexion = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT || 3306 // Usa el puerto configurado o el predeterminado
+    host: dbHost,
+    database: dbName,
+    user: dbUser,
+    password: dbPass
 });
 
 app.set("view engine", "ejs");
